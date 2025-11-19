@@ -39,7 +39,6 @@ export const Navbar = () => {
             </span>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
@@ -61,7 +60,6 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -73,7 +71,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-gray-800 absolute w-full">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

@@ -102,45 +102,48 @@ export const TerminalWindow = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-fit mx-auto perspective-1000 group">
-      <div className="relative rounded-xl bg-[#0f172a]/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2">
-        <div className="flex items-center justify-between px-4 py-3 bg-white/5 border-b border-white/5">
-          <div className="flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto perspective-1000 group">
+      <div className="relative rounded-lg sm:rounded-xl bg-[#0f172a]/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2">
+        <div className="flex items-center justify-between px-2 sm:px-4 py-2 sm:py-3 bg-white/5 border-b border-white/5">
+          <div className="flex gap-1 sm:gap-2">
+            <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-red-500/80"></div>
+            <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-yellow-500/80"></div>
+            <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-green-500/80"></div>
           </div>
-          <div className="text-xs font-mono text-gray-400 flex items-center gap-2">
-            <Terminal size={12} />
-            <span>ragav.config.js</span>
+          <div className="text-[10px] sm:text-xs font-mono text-gray-400 flex items-center gap-1 sm:gap-2">
+            <Terminal size={10} className="sm:size-3" />
+            <span className="hidden xs:inline">ragav.config.js</span>
           </div>
-          <div className="w-8"></div>
+          <div className="w-6 sm:w-8"></div>
         </div>
 
-        <div className="p-6 font-mono text-xs md:text-sm h-80 overflow-hidden">
+        <div className="p-3 sm:p-6 font-mono text-[10px] sm:text-xs md:text-sm h-64 sm:h-80 overflow-hidden">
           {lines.map((line, idx) => (
-            <div key={idx} className={`${line.color} leading-6 whitespace-pre`}>
+            <div
+              key={idx}
+              className={`${line.color} leading-5 sm:leading-6 whitespace-pre`}
+            >
               {line.display}
             </div>
           ))}
           {isTyping && (
-            <span className="inline-block w-2 h-4 bg-indigo-500 ml-1 animate-pulse align-middle"></span>
+            <span className="inline-block w-1.5 sm:w-2 h-3 sm:h-4 bg-indigo-500 ml-1 animate-pulse align-middle"></span>
           )}
           {!isTyping && (
-            <div className="mt-4 text-green-400 animate-pulse">
+            <div className="mt-3 sm:mt-4 text-green-400 animate-pulse text-[9px] sm:text-xs">
               {">"} Compilation successful... <br />
               {">"} Welcome to my portfolio.
             </div>
           )}
         </div>
 
-        <div className="px-4 py-1.5 bg-indigo-500/10 border-t border-white/5 text-[10px] font-mono text-indigo-300 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span>ONLINE</span>
+        <div className="px-2 sm:px-4 py-1 sm:py-1.5 bg-indigo-500/10 border-t border-white/5 text-[8px] sm:text-[10px] font-mono text-indigo-300 flex justify-between items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span className="hidden xs:inline">ONLINE</span>
           </div>
-          <span>UTF-8</span>
-          <span>JavaScript</span>
+          <span className="hidden sm:inline">UTF-8</span>
+          <span>JS</span>
         </div>
       </div>
 
