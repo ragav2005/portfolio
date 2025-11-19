@@ -19,7 +19,7 @@ export const Skills = () => {
       title: "Backend",
       icon: <Server size={24} />,
       color: "green",
-      skills: ["Node.js", "Spring Boot", "Django", "Express.js", "PostgreSQL"],
+      skills: ["Node.js & Express.js", "Spring Boot", "Django", "PostgreSQL"],
     },
     {
       title: "Tools & Web3",
